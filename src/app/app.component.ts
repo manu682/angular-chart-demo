@@ -1,12 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ChartType } from 'angular-google-charts';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'SIM Throughput';
   type = ChartType.LineChart;
   data = [
@@ -21,20 +22,20 @@ export class AppComponent {
     [new Date(1620133925650), 55, 31, 42, 12, 65, 'Test'],
   ];
   columnNames = [
-    'Month',
-    'My Sim 1',
-    'My Sim 2',
-    'My Sim 3',
-    'My Sim 4',
-    'My Sim 5',
-    { role: 'tooltip', type: 'string', p: { html: true } }
+    { type: 'datetime', id: 'Time', label: 'Time' },
+    { type: 'number', id: 'sim1', label: 'SIM 1' },
+    { type: 'number', id: 'sim1', label: 'SIM 2' },
+    { type: 'number', id: 'sim1', label: 'SIM 3' },
+    { type: 'number', id: 'sim1', label: 'SIM 4' },
+    { type: 'number', id: 'sim1', label: 'SIM 5' },
+    { role: 'tooltip', type: 'string', p: { html: true } },
   ];
   options = {
     hAxis: {
       title: 'Time',
     },
     vAxis: {
-      title: 'Throughput',
+      title: 'Throughput (Kbps)',
     },
     pointSize: 3,
     curveType: 'function',
@@ -70,4 +71,13 @@ export class AppComponent {
   };
   width = 550;
   height = 300;
+
+  ngOnInit() {
+    //Re-assign the unit dynamically
+    timer(5000).subscribe(() => {
+      var tempOption = Object.assign({}, this.options);
+      tempOption['vAxis']['title'] = 'Throughput (Mbps)';
+      this.options = tempOption;
+    });
+  }
 }
