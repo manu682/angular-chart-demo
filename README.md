@@ -1,5 +1,9 @@
 # AngularChartDemo
 
+![image](https://user-images.githubusercontent.com/5982799/117143862-eb734380-adce-11eb-9292-528eb8f9f7ac.png)
+
+Install dependencies with `npm i`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
 
 ## Development server
