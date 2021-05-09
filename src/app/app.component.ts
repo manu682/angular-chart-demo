@@ -69,5 +69,5 @@ export class AppComponent {
     ],
   };
   width = 550;
-  height = 400;
+  height = 300;
 }
