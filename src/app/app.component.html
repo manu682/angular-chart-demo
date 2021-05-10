@@ -1,8 +1,29 @@
+<!--
 <div class="flex-container">
    <div class="flex-item-left">
-      <google-chart #chart1 title="Top 5 (SIM Downlink Throughput)" [type]="type" [data]="data" [columns]="columnNames" [options]="options"
-         [width]="width" [height]="height">
-      </google-chart>
+-->
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <span>
+      <label>Number of SIMs: </label>   
+      <select>
+         <option>5</option>
+         <option>10</option>
+         <option>15</option>
+         <option>20</option>
+      </select>
+   </span>
+   &nbsp;&nbsp;&nbsp;&nbsp;
+   <span>
+      <label>Aggregation Interval: </label>   
+      <select>
+         <option>12 Hours</option>
+         <option>1 Hour</option>
+      </select>
+   </span>
+   <google-chart #chart1 title="Top N (SIM Downlink Throughput)" [type]="type" [data]="data" [columns]="columnNames" [options]="options"
+      [width]="width" [height]="height">
+   </google-chart>
+<!--
    </div>
    <div class="flex-item-right">
       <google-chart #chart2 title="Top 5 (SIM Uplink Throughput)" [type]="type" [data]="data" [columns]="columnNames" [options]="options"
@@ -20,3 +41,4 @@
       </google-chart>
    </div>
 </div>
+-->
