@@ -1,13 +1,24 @@
-.flex-container {
+.outer-flex-container {
   display: flex;
   background-color: white;
   flex-wrap: wrap;
 }
 
-.flex-item-left {
-  flex: 50%;
+.inner-flex-container1 {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+}
+.inner-flex-container2 {
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
 }
 
-.flex-item-right {
-  flex: 50%;
+.flex-row {
+  flex: 100%;
+}
+
+.flex-column {
+  flex: 100%;
 }
