@@ -1,7 +1,7 @@
 <div class="outer-flex-container">
    <div class="flex-row" style="height: 70px">
       <div class="flex-row inner-flex-container1">
-         <span style="width: 200px;">
+         <span style="width: 180px;">
             <mat-form-field appearance="fill">
                <mat-label style="font-weight: bold;">Network: </mat-label>
                <mat-select [value]="networkSelected" appearance="fill">
@@ -10,7 +10,7 @@
                </mat-select>
             </mat-form-field>
          </span>
-         <span style="width: 200px;">
+         <span style="width: 180px;">
             <mat-form-field appearance="fill">
                <mat-label style="font-weight: bold">APN: </mat-label>
                <mat-select value="myapn1">
@@ -19,7 +19,7 @@
                </mat-select>
             </mat-form-field>
          </span>
-         <span style="width: 200px;">
+         <span style="width: 180px;">
             <mat-form-field appearance="fill">
                <mat-label style="font-weight: bold">QoS: </mat-label>
                <mat-select value="myqos1">
@@ -28,20 +28,29 @@
                </mat-select>
             </mat-form-field>
          </span>
+         <span style="width: 180px;">
+            <mat-form-field appearance="fill">
+               <mat-label style="font-weight: bold;">SIM Alias: </mat-label>
+               <mat-select [value]="networkSelected" appearance="fill">
+                  <mat-option value="mynetwork1">All SIMs</mat-option>
+                  <mat-option value="mynetwork2">My SIM 1</mat-option>
+               </mat-select>
+            </mat-form-field>
+         </span>
       </div>
    </div>
    <div class="flex-row" style="height: 70px">
       <div class="inner-flex-container2">
          <span>
-            <label style="font-weight: bold; display: block">Top SIMs Count: </label>
-            <mat-slider thumbLabel tickInterval="5" min="5" max="20" step="5" value="20"></mat-slider>
+            <label style="font-weight: bold; display: block">Transmission: </label>
+            <mat-radio-group aria-label="Select an option">
+               <mat-radio-button value="1">Downlink</mat-radio-button>
+               <mat-radio-button value="2">Uplink</mat-radio-button>
+            </mat-radio-group>
          </span>
          <span>
-            <label style="font-weight: bold; display: block">Aggregation Interval: </label>
-            <mat-radio-group aria-label="Select an option">
-               <mat-radio-button value="1">1 minute</mat-radio-button>
-               <mat-radio-button value="2">2 minutes</mat-radio-button>
-            </mat-radio-group>
+            <label style="font-weight: bold; display: block">Top SIMs Count: </label>
+            <mat-slider thumbLabel tickInterval="5" min="5" max="20" step="5" value="20"></mat-slider>
          </span>
          <span>
             <label style="font-weight: bold; display: block">Historical Range: </label>
@@ -56,9 +65,11 @@
          [options]="options" [width]="width" [height]="height">
       </google-chart>
    </div>
+   <!--
    <div class="flex-row">
       <google-chart #chart2 title="Uplink Throughput (SIMs)" [type]="type" [data]="data" [columns]="columnNames"
          [options]="options" [width]="width" [height]="height">
       </google-chart>
    </div>
+   -->
 </div>

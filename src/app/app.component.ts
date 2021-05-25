@@ -278,7 +278,7 @@ export class AppComponent implements OnInit {
     ],
   };
   width = 1250;
-  height = 230;
+  height = 430;
   networkSelected = 'mynetwork1';
 
   ngOnInit() {
